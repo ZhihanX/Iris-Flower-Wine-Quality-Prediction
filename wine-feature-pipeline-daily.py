@@ -41,7 +41,7 @@ def generate_wine(quality_cls, fixed_acidity_min,fixed_acidity_max, volatile_aci
 
 def get_random_wine():
     """
-    Returns a DataFrame containing one random wine flower
+    Returns a DataFrame containing one random wine
     """
     import pandas as pd
     import random
