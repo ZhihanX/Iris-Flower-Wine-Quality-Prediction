@@ -1,12 +1,6 @@
-# Iris & Wine-quality
+# ID2223 Lab1 Iris & Wine-quality
 
-This is the course content of KTH ID2233 HT23 Scalable Machine Learning and Deep Learning. For more information please visit the course webpage: https://id2223kth.github.io/
-
-Here are our UI URLs on Hugging Face:
-
-Hugging-face:https://huggingface.co/spaces/PatrickML/Wine
-
-Hugging-face-monitor:https://huggingface.co/spaces/PatrickML/wine_monitor
+This is the course content of KTH ID2223 HT23 Scalable Machine Learning and Deep Learning. For more information please visit the course webpage: https://id2223kth.github.io/
 
 # Task1: Iris Flower Classification
 ## 1.1 Requirements for Task1
@@ -75,4 +69,17 @@ models = {
 ```
 We got the best performance with Random Forest. The predicting accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
 
-### 2.3.4 
+### 2.3.4 Predict new added wine & get historical prediction information
+Predict the quality of the new added wine with the trained model in 2.3.3. We also found 2 image URLs for this part and connected them with the prediction results. Meanwhile, a confusion matrix with historical prediction performance is contained in this part.
+
+### 2.3.5 User Interface
+Here are our UI URLs on Hugging Face:
+
+Hugging-face:https://huggingface.co/spaces/PatrickML/Wine
+
+Hugging-face-monitor:https://huggingface.co/spaces/PatrickML/wine_monitor
+
+# Collaborators
+![Zhihan Xu](https://github.com/ZhihanX)
+
+![Conglei Xiang](https://github.com/CLxxxxxxxxara)
