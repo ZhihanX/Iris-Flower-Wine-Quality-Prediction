@@ -51,10 +51,10 @@ Pipeline picture:
 ![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/02dfba17-33fd-4c85-a17d-3544593d01d7)
 
 ### 2.3.1 Adjust the classifying label ([Task2 wine/wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
-We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5 together as 'bad' and 6, 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
+We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5, 6 together as 'bad' and 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
 
 ### 2.3.2 Add daily synthetic wine ([wine-feature-pipeline-daily.py](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine-feature-pipeline-daily.py))
 We defined a range for bad quality and good quality wine. The “daily” feature pipeline runs once per day to add a new synthetic wine randomly chosen from the range we defined.
 
-### 2.3.3 Train regression classifier
-
+### 2.3.3 Train classifier model with Random Forest
+We compared the training accuracy locally among the and got best performance with Random Forest. The accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
