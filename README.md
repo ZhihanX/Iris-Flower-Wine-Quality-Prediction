@@ -2,7 +2,7 @@
 
 This is the course content of KTH ID2233 HT23 Scalable Machine Learning and Deep Learning. For more information please visit the course webpage: https://id2223kth.github.io/
 
-Here are our UI Url on Hugging Face:
+Here are our UI URLs on Hugging Face:
 
 Hugging-face:https://huggingface.co/spaces/PatrickML/Wine
 
@@ -50,11 +50,29 @@ Wine Quality (https://raw.githubusercontent.com/ID2223KTH/id2223kth.github.io/ma
 Pipeline picture:
 ![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/02dfba17-33fd-4c85-a17d-3544593d01d7)
 
-### 2.3.1 Adjust the classifying label ([Task2 wine/wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
+### 2.3.1 Preprocessing & Adjust the classifying label ([Task2 wine/wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
 We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5, 6 together as 'bad' and 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
 
 ### 2.3.2 Add daily synthetic wine ([wine-feature-pipeline-daily.py](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine-feature-pipeline-daily.py))
 We defined a range for bad quality and good quality wine. The “daily” feature pipeline runs once per day to add a new synthetic wine randomly chosen from the range we defined.
 
 ### 2.3.3 Train classifier model with Random Forest
-We compared the training accuracy locally among the and got best performance with Random Forest. The accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
+We compared the training accuracy locally with the following code:
+```python
+models = {
+    'Decision Tree': DecisionTreeClassifier(),
+    'Random Forest': RandomForestClassifier(random_state=rdm_value),
+    'SVM': SVC(),
+    "SVM (linear)": SVC(kernel="linear"),
+    "SVM (polynomial)": SVC(kernel="poly"),
+    "Gradient Boosting": GradientBoostingClassifier(random_state=rdm_value),
+    'AdaBoostClassifier': AdaBoostClassifier(),
+    'Logistic Regression': LogisticRegression(),
+    'BaggingClassifier': BaggingClassifier(random_state=rdm_value),
+    'MLP': MLPClassifier(),
+    'Naive Bayes': GaussianNB()
+}
+```
+We got the best performance with Random Forest. The predicting accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
+
+### 2.3.4 
