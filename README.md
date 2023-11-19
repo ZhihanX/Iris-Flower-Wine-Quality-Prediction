@@ -50,5 +50,5 @@ Wine Quality (https://raw.githubusercontent.com/ID2223KTH/id2223kth.github.io/ma
 Pipeline picture:
 ![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/02dfba17-33fd-4c85-a17d-3544593d01d7)
 
-### 2.3.1 Adjust the classifying label (![wine_with_hopsworks_backfill.ipynb](./Task2 wine/wine_with_hopsworks_backfill.ipynb)
+### 2.3.1 Adjust the classifying label ([wine_with_hopsworks_backfill.ipynb](./Task2 wine/wine_with_hopsworks_backfill.ipynb)
 We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5 together as 'bad' and 6, 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
