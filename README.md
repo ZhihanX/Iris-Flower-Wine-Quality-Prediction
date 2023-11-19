@@ -43,12 +43,12 @@ In Task2, our tasks are:
 
 5) Write a batch inference pipeline to predict the quality of the new wine(s) added, and build a Gradio application to show the most recent wine quality prediction and outcome, and a confusion matrix with historical prediction performance. 
 
-# 2.2 Dataset
+## 2.2 Dataset
 Wine Quality (https://raw.githubusercontent.com/ID2223KTH/id2223kth.github.io/master/assignments/lab1/wine.csv)
 
 Pipeline picture:
 ![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/02dfba17-33fd-4c85-a17d-3544593d01d7)
 
-## 2.2 Steps and Explanation
-### 2.2.1 Adjust the classifying label
+## 2.3 Steps and Explanation
+### 2.3.1 Adjust the classifying label
 We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5 together as 'bad' and 6, 7, 8, 9 together as 'good'.
