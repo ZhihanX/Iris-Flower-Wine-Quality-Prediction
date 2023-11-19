@@ -53,4 +53,5 @@ Pipeline picture:
 ### 2.3.1 Adjust the classifying label ([Task2 wine/wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
 We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5 together as 'bad' and 6, 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
 
-### 2.3.2 
+### 2.3.2 Add daily synthetic wine 
+We defined a range for bad quality and good quality wine. The “daily” feature pipeline runs once per day to add a new synthetic wine randomly chosen from the range we defined.
