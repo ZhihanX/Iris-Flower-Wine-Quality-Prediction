@@ -44,13 +44,13 @@ Wine Quality (https://raw.githubusercontent.com/ID2223KTH/id2223kth.github.io/ma
 Pipeline picture:
 ![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/02dfba17-33fd-4c85-a17d-3544593d01d7)
 
-### 2.3.1 Preprocessing & Adjust the classifying label ([Task2 wine/wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
+### 2.3.1 Preprocessing & Adjust the classifying label ([wine_with_hopsworks_backfill.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_with_hopsworks_backfill.ipynb))
 We initially utilized a series of functions to observe and analyze the source dataset. After deduplication and removal of NaN values, we observed that the labels 3, 4, 5, 6, 7, 8, 9 were overly concentrated around classes 5 and 6. Consequently, the machine learning model built on this classification label yielded only around 55% accuracy. Therefore, we decided to adjust the classification labels by grouping 3, 4, 5, 6 together as 'bad' and 7, 8, 9 together as 'good'. We also encoded the column 'type' which encodes white as 0, and red as 1. After all the preprocessing and adjustments, the data frame is uploaded to the Hopsworks.
 
 ### 2.3.2 Add daily synthetic wine ([wine-feature-pipeline-daily.py](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine-feature-pipeline-daily.py))
 We defined a range for bad quality and good quality wine. The “daily” feature pipeline runs once per day to add a new synthetic wine randomly chosen from the range we defined.
 
-### 2.3.3 Train classifier model with Random Forest
+### 2.3.3 Train classifier model with Random Forest ([wine_training_pipeline.ipynb](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine_training_pipeline.ipynb))
 We compared the training accuracy locally with the following code:
 ```python
 models = {
@@ -69,7 +69,7 @@ models = {
 ```
 We got the best performance with Random Forest. The predicting accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
 
-### 2.3.4 Predict new added wine & get historical prediction information
+### 2.3.4 Predict new added wine & get historical prediction information ([wine-batch-interence-pipeline.py](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine-batch-interence-pipeline.py))
 Predict the quality of the new added wine with the trained model in 2.3.3. We also found 2 image URLs for this part and connected them with the prediction results. Meanwhile, a confusion matrix with historical prediction performance is contained in this part.
 
 ### 2.3.5 User Interface
@@ -80,6 +80,6 @@ Hugging-face:https://huggingface.co/spaces/PatrickML/Wine
 Hugging-face-monitor:https://huggingface.co/spaces/PatrickML/wine_monitor
 
 # Collaborators
-![Zhihan Xu](https://github.com/ZhihanX)
+[Zhihan Xu](https://github.com/ZhihanX)
 
-![Conglei Xiang](https://github.com/CLxxxxxxxxara)
+[Conglei Xiang](https://github.com/CLxxxxxxxxara)
