@@ -82,5 +82,4 @@ if __name__ == "__main__":
     else:
         #stub.deploy("wine_daily")
         modal.runner.deploy_stub(stub)
-        
         f.remote()
