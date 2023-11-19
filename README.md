@@ -69,6 +69,9 @@ models = {
 ```
 We got the best performance with Random Forest. The predicting accuracy could reach over 80% when the proportion of the dataset to include in the test split is 0.2.
 
+![image](https://github.com/ZhihanX/Wine-quality/assets/114545801/8f801c83-ea13-4fa4-87d7-2778efad80a2)
+
+
 ### 2.3.4 Predict new added wine & get historical prediction information ([wine-batch-interence-pipeline.py](https://github.com/ZhihanX/Wine-quality/blob/main/Task2%20wine/wine-batch-interence-pipeline.py))
 Predict the quality of the new added wine with the trained model in 2.3.3. We also found 2 image URLs for this part and connected them with the prediction results. Meanwhile, a confusion matrix with historical prediction performance is contained in this part.
 
